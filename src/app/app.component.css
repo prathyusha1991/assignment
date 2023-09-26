@@ -1,0 +1,8 @@
+.float-right {
+  float: right;
+  margin-bottom: 30px;
+}
+
+.float-right button:first-child {
+  margin-right: 20px;
+}
