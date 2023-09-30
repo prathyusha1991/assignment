@@ -1,6 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  margin: 50px auto;
+  margin: 50px auto !important;
   width: 900px;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+.backdropBackground {
+  background: rgba(0, 0, 0, 0.32);
+}
+h4 {
+  border-bottom: 1px solid #dcd5d5;
+  padding-bottom: 10px;
+}
+th {
+  font-weight: 500;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+.cdk-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+form {
+  padding: 50px;
+}
+label {
+  padding-bottom: 10px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+table img {
+  width: 200px;
+}
+
+.my-custom-snackbar {
+  margin: 0 !important;
+  position: fixed !important;
+  right: 25px !important;
+  top: 20px;
+  left: initial !important;
+  bottom: initial !important;
+  background: #cfe2ff;
 }

@@ -1,0 +1,37 @@
+<form [formGroup]="pinForm">
+    <div class="form">
+
+      <div class="form-group posrel">
+        <label id="name-label" for="title">*Title</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" formControlName="title"> 
+      </div>
+
+      <div class="form-group posrel">
+        <label id="name-label" for="Collaboratory">*Select Image</label> <br>
+        <input type='file' id="imageUpload" #fileInput (change)="uploadFile($event)" />
+      </div>
+
+
+      <div class="form-group posrel">
+        <label id="name-label" for="Collaboratory">*Choose your Collaboratory</label>
+        <ngx-select [multiple]="true"  (select)="patchCustomervalue()" [items]="getcustomerList" [(ngModel)]="seletedCustomer"  [ngModelOptions]="{standalone: true}"></ngx-select> 
+      </div>
+
+      <div class="form-group posrel">
+        <label id="name-label" for="Collaboratory">*Privacy</label><br>
+        <label class="md-check">
+            <input type="radio" value="Public" name="privacy" formControlName="privacy">
+            Public
+          </label>
+      
+          <label class="md-check">
+            <input type="radio" value="Private" name="privacy" formControlName="privacy">     
+            Private
+          </label>
+      </div>
+
+     <button class="btn btn-primary float-right" (click)="save()" [mat-dialog-close]="false" [disabled]="!pinForm.valid">Save</button>
+     <button class="btn btn-primary float-right" (click)="cancel()" style="margin-left:20px">Cancel</button>
+    </div>
+
+</form>

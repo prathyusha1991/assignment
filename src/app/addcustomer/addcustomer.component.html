@@ -1,0 +1,28 @@
+<form [formGroup]="customerForm">
+    <div class="form">
+
+      <div class="form-group posrel">
+        <label id="name-label" for="title">*Title</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" formControlName="title" > 
+      </div>
+
+      <div class="form-group posrel">
+        <label id="name-label" for="Email">*Email</label>
+        <input type="text" name="Email" id="Email" class="form-control" placeholder="Enter title" formControlName="email" > 
+      </div>
+
+      <div class="form-group posrel">
+        <label id="name-label" for="title">*Region</label>
+        <ngx-select (select)="getCountryList()" [items]="regionValues" [(ngModel)]="seletedRegion"  [ngModelOptions]="{standalone: true}"></ngx-select>
+      </div>
+
+      <div class="form-group posrel">
+        <label id="name-label" for="title">*Country</label>
+        <ngx-select (select)="getCountryListvalue()" [items]="countryValues" [(ngModel)]="seletedCountry"  [ngModelOptions]="{standalone: true}"></ngx-select>
+      </div>
+
+     <button class="btn btn-primary float-right" (click)="save()" [mat-dialog-close]="false" [disabled]="!customerForm.valid">Save</button>
+     <button class="btn btn-primary float-right" (click)="cancel()" style="margin-left:20px">Cancel</button>
+      
+    </div>
+</form>
